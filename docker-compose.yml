@@ -1,0 +1,10 @@
+parser-ms:
+  build: .
+  environment:
+    XDEBUG_CONFIG: remote_host=172.17.0.1
+  ports:
+    - "8001:8000"
+    - "9000:9000"
+  volumes:
+    - .:/var/www
+  command: php -S 0.0.0.0:8080  -t /var/www/public/
